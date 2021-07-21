@@ -8,6 +8,7 @@ const User = require("./models/user")
 const session = require("express-session")
 const methodOverride = require('method-override')
 
+const { UserValidation } = require("./validation/users/user.validation")
 app.use(session({
   secret: process.env.SECRET,
   resave: true,
@@ -27,8 +28,8 @@ app.use("/css",
 app.use("/js",
   express.static(path.join(__dirname, "node_modules/mdb-ui-kit/js")));
 
+
 //CONNECTED MONGO_DB
-const db = require('./config/keys').MongoURI;
 const user = require("./models/user")
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true, useCreateIndex: true,
@@ -38,19 +39,17 @@ mongoose.connect(process.env.MONGO_URL, {
 
 
 
-
-
 //SIGNUP GET
 app.get("/login", (req, res) => {
   res.render("login.ejs")
 })
 
 //SIGNUP POST
-app.post("/signup", async (req, res) => {
+app.post("/signup",async(req, res) => {
   if(req.body.email){
-    req.body.phone==null;
+    req.body.phone=null;
   }
-  else(req.body.email==null)
+  else(req.body.email=null)
 
   console.log(req.body)
   try {
@@ -111,6 +110,7 @@ app.post("/updateuser/:id" , async (req, res )=> {
   await User.findOneAndUpdate({_id: req.params.id} , 
   {$set:{
     email: req.body.email, 
+    phone:req.body.phone,
     password: req.body.password, 
     
   }

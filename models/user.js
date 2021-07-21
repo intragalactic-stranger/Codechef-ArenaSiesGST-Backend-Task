@@ -12,7 +12,6 @@ email:{
 password:{
   type:String,
   required:true,
-  unique:true,
 },
 phone:{
   type:String,
@@ -20,4 +19,7 @@ phone:{
 },
 
 })
-module.exports =mongoose.model("User",userSchema)
+
+
+
+module.exports =mongoose.model("User",userSchema) 

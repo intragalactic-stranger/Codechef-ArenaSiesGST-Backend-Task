@@ -33,9 +33,20 @@
       <input
         type="text"
         class="form-control"
-        placeholder="write title"
+        placeholder="uodate your email address "
         aria-describedby="button-addon2"
         name="email" value="<%= user.email %>"
+      />
+    </div>
+
+    <div>
+      <input
+        type="tel"
+        pattern="[7-9]{1}[0-9]{9}"
+        class="form-control"
+        placeholder="New Phone Number "
+        aria-describedby="button-addon2"
+        name="phone" value="<%= user.phone %>"
       />
     </div>
 
@@ -43,7 +54,7 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Write your Blog "
+        placeholder="Enter your new password"
         aria-describedby="button-addon2"
         name="password" value="<%= user.password %>"
       />

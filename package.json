@@ -10,18 +10,23 @@
   "author": "JBG",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "cookie-parser": "^1.4.5",
     "dompurify": "^2.2.9",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-joi-validation": "^5.0.0",
     "express-session": "^1.17.2",
+    "i": "^0.3.6",
+    "joi": "^17.4.1",
     "jsdom": "^16.6.0",
     "marked": "^2.0.7",
     "mdb-ui-kit": "^3.6.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.12.13",
     "morgan": "^1.10.0",
+    "npm": "^7.20.0",
     "slugify": "^1.5.3"
   },
   "devDependencies": {
